@@ -1,0 +1,172 @@
+.searchbar, .booking-calendar, .filters, #rating, #guestRating, #hotellocation,#morefilters  {
+    background-color: #34464f;
+   color: white;
+}
+
+/* No border for dropdowns  */
+.no-border {
+    border: 0;
+    box-shadow: none; 
+}
+
+/* White vertical line on the left of each dropdown */
+.vl {
+    border-left: 1px solid gainsboro;
+    height: 100%;
+    max-height: 60px;
+    
+  }
+
+/* Blue vertical line on the left of checkin calendar */
+  .vl-checkin {
+     border-left: 5px solid  #1f93c0 !important; 
+     
+  }
+
+  /* Orange vertical line on the left of checkout calendar */
+  .vl-checkout {
+    border-left: 5px solid  orange !important; 
+    
+ }
+
+/* Change of color for slider thumb */
+input[type=range]::-webkit-slider-thumb {
+    background: lightgray;
+    
+}
+
+/* Change of color for slider line */
+input[type=range]::-webkit-slider-runnable-track {
+    background: #5bc0de;
+}
+
+/* Tab fix to display Max: $1500 on the right */
+.tab{
+    Padding-left:190px;
+}
+
+/* Tab fix to display Superscript text (sup) in the center */
+
+.tab2{
+    Padding-left:150px;
+}
+
+/* Background image for view map button */
+#map{
+    background-image: url(https://compote.slate.com/images/548bf4ee-8d60-4dca-b5f2-f3a970ceb8d5.png);
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* Box for Hotel Website display */
+  .box {
+    float: left;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    clear: both;
+    color: teal;
+    background-color: paleturquoise;
+  }
+  
+  /* Box for ratings of each hotel  */
+  .ratingbox {
+    float: left;
+    height: 7%;
+    width: 7%;
+    clear: both;
+    color: white;
+    text-align: center;
+    background-color: darkgreen;
+  }
+ 
+  /* Change of color for secondary deals - Agoda and Travelocity */
+  .dealsDetail2,  .dealsDetail3 {
+      color: dimgrey;
+  }
+
+
+  /* Change of color for Hotel Website price deal */
+.text-success{
+  color:#3f8a24 !important;
+}
+
+/* Change of color for View Deal button */
+.btn-success{
+  background-color:#3f8a24 !important;
+  border-color: #3f8a24 !important;
+}
+
+
+/* Settings for div hoteldisplay and its components */
+.hoteldisplay{
+  position: relative;
+  overflow: hidden;
+  
+} 
+
+/* Settings for div hoteldisplay images */
+ .hoteldisplay img{
+  position: relative;
+  display: inline-block;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 300px;
+  height: 280px;
+}
+
+/* Settings for div hoteldisplay heart icon */
+.fa-heart{
+  position: absolute; /* Takes this element out the document flow */
+    z-index:10;
+    left: 5px; /* Move pin1 50px left */
+    top: 5px; /* Move pin1 100px down */
+  
+}
+
+/* Settings for div hoteldisplay span on bottom of images */
+.hoteldisplay span{
+  position: absolute; /* Takes this element out the document flow */
+    z-index:10; /* Just in case of z-index issues, remove if not needed */
+    left: 5px; /* Move pin1 50px left */
+    top: 245px; /* Move pin1 100px down */
+}

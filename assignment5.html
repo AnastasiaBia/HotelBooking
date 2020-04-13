@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels page</title>
+
+
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">
+        </script>
+
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--FontAwesome-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+   
+
+
+    <!-- Datepicker -->
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container ">
+
+        <!--Searchbar-->
+        <section class="row pt-3 searchbar" id="search-panel">
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border-0"><i
+                                class="fas fa-search text-black-50"></i></span>
+                    </div>
+
+
+                    <input list="cities" class="form-control border-0 city-choice" name="city-choice" aria-label="City"
+                        placeholder="Paris" />
+
+                    <datalist id="cities">
+
+
+                    </datalist>
+                    <div class="input-group-append">
+
+                        <button class="input-group-text bg-info text-white btn px-5 border-0"
+                            id="search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Booking Calendars-->
+        <section class="row booking-calendar " id="datesroom">
+            <div class="col ">
+
+                <label for="checkin">
+
+                    <i class="fas fa-calendar-day"></i>
+                    Check-In
+                    <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-right"></i>
+                </label>
+                <input class="form-control mb-3 vl-checkin" name="checkin" placeholder="Friday, 10/04/20" readonly type="text"
+                    id="datepicker" />
+
+
+
+                
+
+            </div>
+            <div class="col ">
+                <label for="checkout">
+
+                    <i class="fas fa-calendar-day"></i>
+                    Check-Out
+                    <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-right"></i>
+                </label>
+                <input class="form-control mb-3 vl-checkout" name="checkout" placeholder="Saturday, 11/04/20 " readonly type="text"
+                    id="datepicker2" />
+            </div>
+
+
+            <!-- Roomtypes -->
+            <div class="col " id="roomTypes">
+                <label for="roomtypes">
+                    <i class="fas fa-users"></i> Room Types
+                </label>
+
+                <select class="col-12 form-control mb-3" name="roomtypes" id="roomtypes">
+                    <option value="">All</option>
+                </select>
+            </div>
+        </section>
+
+        <!--Price, propert type, guest rating, hotel location-->
+        <section class="row filters" id="filtering">
+            <div class="col-4 mb-3">
+
+
+                <div class="col " id="forPrice">
+                    <label for="priceMessage"> Price </label>
+
+                </div>
+
+
+                <sup id="priceMessage" class="tab2"> 1500 &dollar;</sup>
+                <input class="priceBar custom-range slider" id="price" type="range" min="0" max="1500" value="1500" />
+            </div>
+
+            <div class="col-2 mb-3 vl">
+                <div id="type" class="col ">Property type</div>
+                <select class="col form-control no-border " name="rating" id="rating">
+                    <option value="">All</option>
+                    <option value="0">0 stars</option>
+                    <option value="1">1 star</option>
+                    <option value="2">2 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="5">5 stars</option>
+                </select>
+            </div>
+
+            <div class="col-2 mb-3 vl">
+                <div id="guest" class="col ">Guest Rating</div>
+                <select class="col form-control no-border " name="guestRating" id="guestRating">
+                    <option value="" selected>All</option>
+                    <option value="0">0-2 - Okay</option>
+                    <option value="1">2-6 - Fair</option>
+                    <option value="2">6-7 - Good</option>
+                    <option value="3">7-8.5 - Very Good</option>
+                    <option value="4">8.5-10 - Excellent</option>
+                </select>
+            </div>
+
+            <div class="col-2 mb-3 vl">
+                <div id="" class="col-12">Hotel location</div>
+                <label class="wrap">
+                    <select class="col form-control no-border" name="hotellocation" id="hotellocation">
+                        <option value="">All</option>
+
+                    </select>
+                </label>
+            </div>
+
+            <div class="col-2 mb-3 vl">
+                <div id="" class="col-12">More filters</div>
+                <label class="wrap">
+                    <select class="col form-control no-border" name="morefilters" id="morefilters">
+                        <option value="">Select</option>
+
+                    </select>
+                </label>
+            </div>
+
+        </section>
+
+        <!--Map and Sort by-->
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" style="text-align: right;"> &times;</span>
+                <div id="maps"></div>
+
+
+
+            </div>
+
+        </div>
+        <section id="mapsort" class="row map justify-content-between">
+            <div id="map" class="ml-3 mt-1 mb-3 col-2"> &nbsp;
+                <!-- Button to open the modal -->
+                <button id="myBtn" class=" mb-3 form-control btn-light"><b>View Map</b></button>
+            </div>
+
+            <!-- Sort by -->
+            <div id="sort" class="mr-3 ml-5 px-5 mb-3">
+                <span id="sortText" class="mr-2"> Sort by </span>
+                <select class="col-12 form-control" name="filters" id="filters">
+                    <option value="">All</option>
+                </select>
+            </div>
+        </section>
+
+
+
+
+        <!-- Hotels diplay section -->
+        <section id="hotels" class="row bg-light">
+
+        </section>
+    </div>
+
+
+
+    <!-- Javascript file -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
